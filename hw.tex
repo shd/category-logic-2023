@@ -1,0 +1,116 @@
+\documentclass[10pt]{article}
+
+\pagestyle{plain}
+\textwidth=15.5cm
+\textheight=24.0cm
+\oddsidemargin=0.3cm
+\evensidemargin=0.5cm
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amssymb,amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[a4paper,bmargin=2.5cm]{geometry}
+\usepackage{framed}
+
+\newtheorem{Th}{Теорема} 
+\newtheorem{Con}{Следствие}[Th] 
+\newtheorem{Lm}{Лемма}[Th] 
+\newtheorem{Rm}{Замечание}
+\theoremstyle{definition}
+\newtheorem{Def}{Определение} 
+\newtheorem{Pm}{Задача}[subsection]
+% theorem counter resets every \subsection
+\renewcommand{\thePm}{\arabic{Pm}}% Remove subsection from theorem counter representation
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator{\Hom}{Hom}
+
+\DeclareMathSymbol{\mhyphen}{\mathord}{AMSa}{"39}
+
+\voffset=0pt
+\headheight=0pt
+\headsep=0pt
+
+\begin{document}
+
+\def\chap#1#2{\ \\ {\large\bf#1 \ | \ \tt\scshape#2} \par}
+
+\ \vspace{-1cm}
+
+{\bf
+\ \\
+\Large\centerline{\scshape Категорная логика}
+}\normalsize
+
+\subsection{Введение в теорию категорий}
+\begin{Pm}
+Покажите, что если множества, моноиды, и предпорядки рассматривать как категории, то функторы между ними это то же, что и гомоморфизмы.  
+\end{Pm}
+
+\begin{Pm}
+    Опишите инициальные и терминальные объекты в категориях: $Cat$, $Top$ (категория всех топологических пространств), $Group$.
+\end{Pm}
+
+\begin{Pm}
+    Рассмотрим множество $X$. 
+    Любое множество подмножеств $\Omega \subset \mathcal{P}(X)$ образует категорию (в которой объекты -- подмножества и стрелка между двумя объектами $X$,$Y$ есть в том случае, если $X \subseteq Y$). 
+
+    Что значит, что в этой категории есть инициальный или терминальный объекты?
+\end{Pm}
+
+
+\begin{Def} [Напоминание]
+  Конкретной категорией называется такая категория, у которой каждый объект -- множество, и каждая стрелка -- теоретико-множественная функция.
+\end{Def}
+
+\begin{Def}
+    Функтор $U: \mathcal{A} \to \mathcal{B}$ называется унивалентным (строгим), если для любой пары стрелок $f,g: X\rightrightarrows Y$, если $U(f) = U(g)$, то $f = g$.
+    Другими словами, функтор унивалентен если он инъективен на $\Hom(X, Y)$ для любых объектов $X,Y$ в $\mathcal{A}$.
+\end{Def}
+\begin{Pm}
+  Докажите, что у каждой конкретной категории $\mathcal{A}$ есть унивалентный функтор $\mathcal{A} \to Set$. 
+\end{Pm}
+
+\begin{Pm}
+    Покажите, что каждое действие моноида (группы) $M$ на множество можно представить как функтор из $M$ как категории в $Set$ (действие моноида $M$ на $X$ -- это гомоморфизм из $M$ в моноид перестановок множества $X$).
+\end{Pm}
+
+\begin{Pm}
+    Убедитесь, что следующие отображения дают примеры функторов:
+    \begin{enumerate}
+        \item $\mathcal{P} : Set \to Set$, которое множеству $X$ сопоставляет множество его подмножеств $\mathcal{P}(X)$ и функции $f : X \to Y$ функцию $\mathcal{P}(f)(A) = f(A),\ A\subseteq X$;
+        и $\mathcal{P} : Set \to Set^{op}$, как предыдущее, только функции $f: X \to Y$ оно сопоставляет $\mathcal{P}(f)(B) = f^{-1}(B),\ B\subseteq Y$. 
+        % \item $\mathcal{S} : Set \to Group$, отображает множество $X$ группу его перестановок $\mathcal{S}(X)$ (каким может быть отображение на стрелках?).
+        \item $Ring \to Ring$, отображение кольцу $R$ кольцо многочленов $R[x]$; $Ring \to Ring$, отображение кольцу $R$ его кольцо квадратных матриц $M_{n,n}(R)$.   
+        \item $F\mhyphen Vect \to F\mhyphen Vect^{op}$, отображение векторному пространству $K$ его сопряженное $K^*$ ($F\mhyphen Vect$ -- категория векторных пространств над полем $F$).
+    \end{enumerate}
+\end{Pm}
+
+\begin{Pm}
+    Как можно следующие объекты представить в виде функтора? 
+    \begin{enumerate}
+        \item Стрелка $f: X\to Y$ в произвольной категории $\mathcal{A}$
+        \item Цепочка функций в $Sets$
+        $X_0 \overset{f_1}{\to} X_1 \overset{f_2}{\to} X_2  \ldots \overset{f_n}{\to} X_{n}$.
+        \item Бесконечная цепочка вложенных подмножеств $\mathbb{R}$ 
+        $X_0 \subset X_1 \subset X_2 \ldots \subset X_n \subset \ldots$;
+    \end{enumerate}
+\end{Pm}
+
+\begin{Pm}
+    Рассмотрим категорию $\mathcal{C}$ и зафиксируем в ней объект $X$. 
+    Построим отображение на объектах $\Hom(X,-): C \to Set$, которое каждому объекту сопоставляет множество $\Hom(X, A)$. 
+    Теперь определим отображение на стрелках следующим образом: стрелке $f : A \to B$ сопоставим отображение между $\Hom(X,A)$ и $\Hom(X,B)$, отправляющее $g: X\to A$ в $fg : X \to B$. 
+
+    Покажите, что эти отображения дают функтор. 
+\end{Pm}
+% \begin{Pm}
+% Пусть $2$ это категория с двумя объектами и одной стрелкой между ними, $\cdot \rightarrow \cdot$ (петли опущены).  
+% Покажите, что функторы из $2$ в категорию $\mathcal{A}$ это в точности стрелки $\mathcal{A}$ и функции ''начало'' и ''конец'' можно рассматривать как функторы $\dom, \cod: \mathcal{A}^2 \rightrightarrows \mathcal{A}$. 
+% \end{Pm}
+\end{document}

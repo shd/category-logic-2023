@@ -5,6 +5,8 @@
 + Lambek J., Scott P.J. Introduction to Higher Order Categorical Logic
 + Голдблатт Р. - Топосы. Категорный анализ логики
 
-
+Темы докладов:
+1. Категории, функторы
+2. Естественные преобразования
 
 

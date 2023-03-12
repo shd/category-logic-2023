@@ -14,6 +14,7 @@
 \usepackage{graphicx}
 \usepackage[a4paper,bmargin=2.5cm]{geometry}
 \usepackage{framed}
+\usepackage{hyperref}
 
 \newtheorem{Th}{Теорема} 
 \newtheorem{Con}{Следствие}[Th] 
@@ -113,4 +114,57 @@
 % Пусть $2$ это категория с двумя объектами и одной стрелкой между ними, $\cdot \rightarrow \cdot$ (петли опущены).  
 % Покажите, что функторы из $2$ в категорию $\mathcal{A}$ это в точности стрелки $\mathcal{A}$ и функции ''начало'' и ''конец'' можно рассматривать как функторы $\dom, \cod: \mathcal{A}^2 \rightrightarrows \mathcal{A}$. 
 % \end{Pm}
+
+\subsection{Сопряженные функторы}
+\href{https://drive.google.com/file/d/1kc4Tb_ImVhWP9aFOOLEC75KcX9R62uhI/view?usp=share_link}{\underline{Конспект.}}
+\begin{Pm}
+    Рассмотрим множества с предпорядком $\mathcal A$ и $\mathcal B$ и ковариантное соответствие Галуа $(F, G)$.
+
+    Доказать:
+
+    \begin{enumerate}
+        \item $a \leq GF(a)$
+        \item $GFGF(a) \leq GF(a)$
+        \item $a \leq a' \Rightarrow GF(a) \leq GF(a')$
+    \end{enumerate}
+\end{Pm}
+\begin{Pm}
+    Рассмотрим множества $X, Y$ и бинарное отношение $R \subseteq X \times Y$.
+
+    Пусть $\mathcal A = (\mathcal P(x), \subseteq)$, $\mathcal B = (\mathcal P(y), \text{superseteq})$.
+
+    Функторы $F : \mathcal A \rightarrow \mathcal B$ и $G : \mathcal B \rightarrow \mathcal A$ определены так:
+    \begin{itemize}
+        \item $A \subseteq X$. $F(A) = \{y \in Y | \forall x \in A. \ (x, y) \in R\}$
+        \item $B \subseteq Y$. $F(B) = \{x \in X | \forall y \in B. \ (x, y) \in R\}$
+    \end{itemize}
+
+    Доказать (или опровергнуть), что $(F, G)$ -- соответствие Галуа.
+\end{Pm}
+\begin{Pm}
+    Понять, как соотносятся сопряжение для множеств с предпорядками и сопряжение для категорий. Сопряжение для категорий можно взять в смысле четверки $(F, U, \eta, \epsilon)$.
+\end{Pm}
+\begin{Pm}
+    Доказать утверждение.
+
+    Сопряжение $(F, U, \eta, \epsilon)$ в категориях $\mathcal A, \mathcal B$ взаимно однозначно соответствует решению $(F, \eta, *)$ для функтора $U : \mathcal B \rightarrow \mathcal A$.
+
+    План доказательства и само утверждение можно найти в книжке на странице 14.
+\end{Pm}
+
+\begin{Pm}
+    Пусть $(F, G)$ -- соответствие Галуа между посетами (частично упорядоченными) $\mathcal A$ и $\mathcal B$. показать, что $F$ сохраняет супремумы, а $G$ сохраняет инфимумы. Доказать, что если $\mathcal A$ имеет, а $F$ сохраняет супремумы, то правое сопряжение $G : \mathcal B \rightarrow \mathcal A$ может быть вычислено формулой $G(b) = sup \{a \in \mathcal A | F(a) \leq b \}$.
+\end{Pm}
+
+\begin{Pm}
+    Понять, объяснить, и доказать утверждение 3.4 на странице 15.
+\end{Pm}
+
+\begin{Pm}
+    Пусть $\mathcal A$ и $\mathcal B$ - пред упорядоченные множества формул пропозиционального исчисления, где порядок -- следование. Для фиксированный формулы $C$ показать, что $F : \mathcal A \rightarrow \mathcal B$ и $G : \mathcal B \rightarrow \mathcal A$, определенные как $F(A) = C \land A$ и $G(B) = C \Rightarrow B$, являются парой сопряженных функторов. Что есть "единство противоположностей" в таком случае?
+\end{Pm}
+
+\begin{Pm}
+    Пусть $\mathcal A = \mathcal B = \mathbf{Sets}$, $C$ -- фиксированное множество, $F(A) = C \times A$, $U(B) = B^C$ для всех $A$ и $B$. Расширить $U$ и $F$ до функторов и показать, что $U$ право-сопряжен к $F$.
+\end{Pm}
 \end{document}

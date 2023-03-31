@@ -167,4 +167,70 @@
 \begin{Pm}
     Пусть $\mathcal A = \mathcal B = \mathbf{Sets}$, $C$ -- фиксированное множество, $F(A) = C \times A$, $U(B) = B^C$ для всех $A$ и $B$. Расширить $U$ и $F$ до функторов и показать, что $U$ право-сопряжен к $F$.
 \end{Pm}
+
+\subsection{Пределы}
+
+\begin{Pm}
+    Найдите хотя бы два уравнителя функций \verb|id :: Int -> Int| и \verb|abs :: Int -> Int| в категории Hask.
+    
+    Объясните, почему следующие функции не являются уравнителями:
+    \begin{enumerate}
+        \item \verb|id :: Int -> Int|
+        \item \verb|\n -> -n :: Int -> Int|
+        \item \verb|\n -> 0 :: Int -> Int|
+    \end{enumerate}
+\end{Pm}
+
+\begin{Pm}
+    Найдите хотя бы один уравнитель функций \verb|fst :: (Int, Int) -> Int| и \\ \verb|snd :: (Int, Int) -> Int| в категории Hask.
+\end{Pm}
+
+\begin{Pm}
+    Найдите хотя бы один уравнитель функций \verb|fst'| и \verb|snd'|, где:
+    \begin{verbatim}
+data IntOrChar = I Int | C Char
+
+fst' :: (Int, Char) -> IntOrChar
+fst' = I . fst
+
+snd' :: (Int, Char) -> IntOrChar
+snd' = C . snd
+    \end{verbatim}
+    
+    в категории Hask.
+\end{Pm}
+
+\begin{Pm}
+    Найдите хотя бы два коуравнителя функций \verb|id :: Int -> Int| и \verb|abs :: Int -> Int| в категории Hask.
+\end{Pm}
+
+\begin{Pm}
+    Найдите хотя бы один pullback функций \verb|length :: [Int] -> Int| и \verb|length :: [Char] -> Int| в категории Hask.
+    \label{pullback1}
+\end{Pm}
+
+\begin{Pm}
+    Найдите хотя бы один pullback функций \verb|id :: Int -> Int| и \verb|(const 0) :: () -> Int| в категории Hask.
+\end{Pm}
+
+\begin{Pm}
+    Найдите хотя бы один pullback функций \verb|(const ()) :: Int -> ()| и \verb|(const ()) :: Char -> ()| в категории Hask.
+\end{Pm}
+
+\begin{Pm}
+    Опишите построение pullback'а из задачи \ref{pullback1} через двоичные произведения и уравнители.
+\end{Pm}
+
+\begin{Pm}
+    Докажите, что любой предел можно построить через произведения и уравнители.
+\end{Pm}
+
+\begin{Pm}
+    Найдите предел функтора \verb|Identity|.
+\end{Pm}
+
+\begin{Pm}
+    Найдите предел функтора \verb|Maybe|.
+\end{Pm}
+
 \end{document}

@@ -11,6 +11,7 @@
 \usepackage[russian]{babel}
 \usepackage{amssymb,amsmath}
 \usepackage{amsthm}
+\usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage[a4paper,bmargin=2.5cm]{geometry}
 \usepackage{framed}
@@ -30,6 +31,8 @@
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{cod}
 \DeclareMathOperator{\Hom}{Hom}
+
+\DeclareRobustCommand{\ArrowOf}{\text{\reflectbox{$\wr$}}}
 
 \DeclareMathSymbol{\mhyphen}{\mathord}{AMSa}{"39}
 
@@ -248,6 +251,48 @@ snd' = C . snd
 
 \begin{Pm}
     Узнать связь между $\Leftarrow$ и $\rightarrow$ в полурешетке Гейтинга
+\end{Pm}
+
+\subsection{Декартово замкнутые категории в уравнениях и графах}
+\begin{Pm}
+Показать, что в любой декартовой категории:
+\begin{enumerate}
+\item $A \times 1 \cong A$
+\item $A \times B \cong B \times A$
+\item $(A \times B) \times C \cong A \times (B \times C)$
+\end{enumerate}
+\end{Pm}
+
+\begin{Pm}
+Показать, что в любой декартово замкнутой категории:
+\begin{enumerate}
+\item $A^1 \cong A$
+\item $1^A \cong 1$
+\item $(A \times B)^C \cong A^C \times B^C$
+\item $A^{B \times C} \cong (A^C)^B$
+\end{enumerate}
+\end{Pm}
+
+\begin{Pm}
+Записать эквивалентное определение декартово замкнутой категории через
+\begin{gather*}
+U_B = (\cdot)^B,\; F_B = (\cdot) \times B\; :\; \mathscr{A} \rightarrow \mathscr{A} \\
+\varepsilon_B(A) = \varepsilon_{A,B};\quad \varepsilon_B\; :\; F_B U_B \rightarrow 1_\mathscr{A} \\
+\eta_B(C) = \eta_{C,B}\; :\; C \rightarrow (C \times B)^B\text{,}
+\end{gather*}
+где $U_B(f) = f^B \equiv f \Leftarrow 1_B = (f\varepsilon_{A,B})^*$ для всех $f : A \rightarrow A'$ (см. предыдущую лекцию).
+\end{Pm}
+
+\begin{Pm}
+Доказать, что
+$$
+  \ulcorner f \urcorner^\ArrowOf = f,\; \ulcorner g^\ArrowOf \urcorner = g\text{,}
+$$
+где $\ulcorner f \urcorner \equiv (f\pi'_{1,A})^*,\; f\; :\; A \rightarrow B$ и $g^\ArrowOf \equiv \varepsilon_{B,A} \langle g \bigcirc_A, 1_A \rangle,\; g\; :\; 1 \rightarrow B^A$.
+\end{Pm}
+
+\begin{Pm}
+Показать, что дедуктивная система $\mathscr{L}(x)$ с прошлой лекции~--- это $\mathscr{D}(\mathscr{L}_x)$, где $\mathscr{L}_x$~--- граф, полученный из $\mathscr{L}$ добавлением нового ребра $x$ между старыми вершинами $T$ и $A$.
 \end{Pm}
 
 \end{document}

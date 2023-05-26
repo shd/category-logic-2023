@@ -47,13 +47,13 @@
 \ \vspace{-1cm}
 
 {\bf
-\ \\
-\Large\centerline{\scshape Категорная логика}
+    \ \\
+    \Large\centerline{\scshape Категорная логика}
 }\normalsize
 
 \subsection{Введение в теорию категорий}
 \begin{Pm}
-Покажите, что если множества, моноиды, и предпорядки рассматривать как категории, то функторы между ними это то же, что и гомоморфизмы.
+    Покажите, что если множества, моноиды, и предпорядки рассматривать как категории, то функторы между ними это то же, что и гомоморфизмы.
 \end{Pm}
 
 \begin{Pm}
@@ -69,7 +69,7 @@
 
 
 \begin{Def} [Напоминание]
-  Конкретной категорией называется такая категория, у которой каждый объект -- множество, и каждая стрелка -- теоретико-множественная функция.
+    Конкретной категорией называется такая категория, у которой каждый объект -- множество, и каждая стрелка -- теоретико-множественная функция.
 \end{Def}
 
 \begin{Def}
@@ -77,7 +77,7 @@
     Другими словами, функтор унивалентен если он инъективен на $\Hom(X, Y)$ для любых объектов $X,Y$ в $\mathcal{A}$.
 \end{Def}
 \begin{Pm}
-  Докажите, что у каждой конкретной категории $\mathcal{A}$ есть унивалентный функтор $\mathcal{A} \to Set$.
+    Докажите, что у каждой конкретной категории $\mathcal{A}$ есть унивалентный функтор $\mathcal{A} \to Set$.
 \end{Pm}
 
 \begin{Pm}
@@ -88,8 +88,8 @@
     Убедитесь, что следующие отображения дают примеры функторов:
     \begin{enumerate}
         \item $\mathcal{P} : Set \to Set$, которое множеству $X$ сопоставляет множество его подмножеств $\mathcal{P}(X)$ и функции $f : X \to Y$ функцию $\mathcal{P}(f)(A) = f(A),\ A\subseteq X$;
-        и $\mathcal{P} : Set \to Set^{op}$, как предыдущее, только функции $f: X \to Y$ оно сопоставляет $\mathcal{P}(f)(B) = f^{-1}(B),\ B\subseteq Y$.
-        % \item $\mathcal{S} : Set \to Group$, отображает множество $X$ группу его перестановок $\mathcal{S}(X)$ (каким может быть отображение на стрелках?).
+              и $\mathcal{P} : Set \to Set^{op}$, как предыдущее, только функции $f: X \to Y$ оно сопоставляет $\mathcal{P}(f)(B) = f^{-1}(B),\ B\subseteq Y$.
+              % \item $\mathcal{S} : Set \to Group$, отображает множество $X$ группу его перестановок $\mathcal{S}(X)$ (каким может быть отображение на стрелках?).
         \item $Ring \to Ring$, отображение кольцу $R$ кольцо многочленов $R[x]$; $Ring \to Ring$, отображение кольцу $R$ его кольцо квадратных матриц $M_{n,n}(R)$.
         \item $F\mhyphen Vect \to F\mhyphen Vect^{op}$, отображение векторному пространству $K$ его сопряженное $K^*$ ($F\mhyphen Vect$ -- категория векторных пространств над полем $F$).
     \end{enumerate}
@@ -100,9 +100,9 @@
     \begin{enumerate}
         \item Стрелка $f: X\to Y$ в произвольной категории $\mathcal{A}$
         \item Цепочка функций в $Sets$
-        $X_0 \overset{f_1}{\to} X_1 \overset{f_2}{\to} X_2  \ldots \overset{f_n}{\to} X_{n}$.
+              $X_0 \overset{f_1}{\to} X_1 \overset{f_2}{\to} X_2  \ldots \overset{f_n}{\to} X_{n}$.
         \item Бесконечная цепочка вложенных подмножеств $\mathbb{R}$
-        $X_0 \subset X_1 \subset X_2 \ldots \subset X_n \subset \ldots$;
+              $X_0 \subset X_1 \subset X_2 \ldots \subset X_n \subset \ldots$;
     \end{enumerate}
 \end{Pm}
 
@@ -255,44 +255,74 @@ snd' = C . snd
 
 \subsection{Декартово замкнутые категории в уравнениях и графах}
 \begin{Pm}
-Показать, что в любой декартовой категории:
-\begin{enumerate}
-\item $A \times 1 \cong A$
-\item $A \times B \cong B \times A$
-\item $(A \times B) \times C \cong A \times (B \times C)$
-\end{enumerate}
+    Показать, что в любой декартовой категории:
+    \begin{enumerate}
+        \item $A \times 1 \cong A$
+        \item $A \times B \cong B \times A$
+        \item $(A \times B) \times C \cong A \times (B \times C)$
+    \end{enumerate}
 \end{Pm}
 
 \begin{Pm}
-Показать, что в любой декартово замкнутой категории:
-\begin{enumerate}
-\item $A^1 \cong A$
-\item $1^A \cong 1$
-\item $(A \times B)^C \cong A^C \times B^C$
-\item $A^{B \times C} \cong (A^C)^B$
-\end{enumerate}
+    Показать, что в любой декартово замкнутой категории:
+    \begin{enumerate}
+        \item $A^1 \cong A$
+        \item $1^A \cong 1$
+        \item $(A \times B)^C \cong A^C \times B^C$
+        \item $A^{B \times C} \cong (A^C)^B$
+    \end{enumerate}
 \end{Pm}
 
 \begin{Pm}
-Записать эквивалентное определение декартово замкнутой категории через
-\begin{gather*}
-U_B = (\cdot)^B,\; F_B = (\cdot) \times B\; :\; \mathscr{A} \rightarrow \mathscr{A} \\
-\varepsilon_B(A) = \varepsilon_{A,B};\quad \varepsilon_B\; :\; F_B U_B \rightarrow 1_\mathscr{A} \\
-\eta_B(C) = \eta_{C,B}\; :\; C \rightarrow (C \times B)^B\text{,}
-\end{gather*}
-где $U_B(f) = f^B \equiv f \Leftarrow 1_B = (f\varepsilon_{A,B})^*$ для всех $f : A \rightarrow A'$ (см. предыдущую лекцию).
+    Записать эквивалентное определение декартово замкнутой категории через
+    \begin{gather*}
+        U_B = (\cdot)^B,\; F_B = (\cdot) \times B\; :\; \mathscr{A} \rightarrow \mathscr{A} \\
+        \varepsilon_B(A) = \varepsilon_{A,B};\quad \varepsilon_B\; :\; F_B U_B \rightarrow 1_\mathscr{A} \\
+        \eta_B(C) = \eta_{C,B}\; :\; C \rightarrow (C \times B)^B\text{,}
+    \end{gather*}
+    где $U_B(f) = f^B \equiv f \Leftarrow 1_B = (f\varepsilon_{A,B})^*$ для всех $f : A \rightarrow A'$ (см. предыдущую лекцию).
 \end{Pm}
 
 \begin{Pm}
-Доказать, что
-$$
-  \ulcorner f \urcorner^\ArrowOf = f,\; \ulcorner g^\ArrowOf \urcorner = g\text{,}
-$$
-где $\ulcorner f \urcorner \equiv (f\pi'_{1,A})^*,\; f\; :\; A \rightarrow B$ и $g^\ArrowOf \equiv \varepsilon_{B,A} \langle g \bigcirc_A, 1_A \rangle,\; g\; :\; 1 \rightarrow B^A$.
+    Доказать, что
+    $$
+        \ulcorner f \urcorner^\ArrowOf = f,\; \ulcorner g^\ArrowOf \urcorner = g\text{,}
+    $$
+    где $\ulcorner f \urcorner \equiv (f\pi'_{1,A})^*,\; f\; :\; A \rightarrow B$ и $g^\ArrowOf \equiv \varepsilon_{B,A} \langle g \bigcirc_A, 1_A \rangle,\; g\; :\; 1 \rightarrow B^A$.
 \end{Pm}
 
 \begin{Pm}
-Показать, что дедуктивная система $\mathscr{L}(x)$ с прошлой лекции~--- это $\mathscr{D}(\mathscr{L}_x)$, где $\mathscr{L}_x$~--- граф, полученный из $\mathscr{L}$ добавлением нового ребра $x$ между старыми вершинами $T$ и $A$.
+    Показать, что дедуктивная система $\mathscr{L}(x)$ с прошлой лекции~--- это $\mathscr{D}(\mathscr{L}_x)$, где $\mathscr{L}_x$~--- граф, полученный из $\mathscr{L}$ добавлением нового ребра $x$ между старыми вершинами $T$ и $A$.
 \end{Pm}
 
+\subsection{Топосы}
+\begin{Pm}
+    Топосы функторов. Покажите, что следующие категории можно представить как топос (указать классификатор подобъектов, доказать замкнутость):
+    \begin{enumerate}
+        \item $Set^2$
+        \item $Set^\rightarrow$
+        \item $Set^M$ -- категория действий моноида (группы).
+    \end{enumerate}
+\end{Pm}
+
+\begin{Pm}
+    Докажите теорему:
+    для любого топоса $\mathcal{C}$ и любого его объекта $a$ категория стрелок над ним $\mathcal{C}\downarrow a$ является топосом.
+\end{Pm}
+
+\begin{Pm}
+    Докажите, что в топосе $\mathcal{T}$ $f:A \to B$
+    \begin{enumerate}
+        \item мономорфизм тогда и только тогда, когда $\mathcal{T} \vDash \forall_{x\in A}\forall_{x^\prime \in A} (f x = f x^\prime) \Rightarrow x = x^\prime$
+        \item эпиморифизм тогда и только тогда, когда $\mathcal{T} \vDash \forall_{y\in B}\exists_{x\in A}f x = y$
+    \end{enumerate}
+\end{Pm}
+
+\begin{Def}
+    Топос называется булевым, если он удовлетворяет формуле $\forall_{t\in \Omega}(t \lor \neg t)$.
+\end{Def}
+\begin{Pm}
+    Докажите, что топос является булевым тогда и только тогда, когда
+    $1 \overset{T}{\to} \Omega \overset{\bot}{\leftarrow} 1$ это диаграмма копроизведения.
+\end{Pm}
 \end{document}

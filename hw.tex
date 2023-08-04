@@ -325,4 +325,52 @@ snd' = C . snd
     Докажите, что топос является булевым тогда и только тогда, когда
     $1 \overset{T}{\to} \Omega \overset{\bot}{\leftarrow} 1$ это диаграмма копроизведения.
 \end{Pm}
+
+\subsection{CAM}
+\begin{Pm}
+Константы Id, Fst, Snd, App --- а также одноместная операция $\Lambda$ и двуместные $\circ$ и $\langle\cdot,\cdot\rangle$ ---
+имеют естественный смысл, задаваемый уравнениями ниже. Также заметим, что их можно понимать как некоторые стрелки 
+в категории между объектами, понятными из контекста. Соответственно, операции --- это стрелки, строящиеся по другим стрелкам.
+Поясните, что следующие уравнения эквиваленты уравнениям, задающим декартово-замкнутые категории 
+(за исключением указаний объектов у констант и операторов и отсутствия уравнений для терминального объекта):
+\vspace{0.3cm}
+
+\begin{tabular}{ll}
+(Ass) & $(x \circ y) \circ z = x \circ (y \circ z)$\\
+(IdL) & $Id \circ x = x$\\
+(IdR) & $x \circ Id = x$\\
+(Fst) & $Fst \circ \langle x,y \rangle = x$\\
+(Snd) & $Snd \circ \langle x,y \rangle = y$\\
+(SPair) & $\langle Fst \circ x, Snd \circ x \rangle = x$\\
+(App) & $App \circ \langle \Lambda(x) \circ Fst, Snd \rangle = x$\\
+(S$\Lambda$) & $\Lambda(App \circ \langle x \circ Fst, Snd \rangle) = x$
+\end{tabular}
+\end{Pm}
+
+\begin{Pm}
+Покажите, что уравнения из предыдущего задания эквивалентны уравнениям Ass + IdL + IdR + Fst + Snd + DPair + Beta + D$\Lambda$ + AI + FSI, где:
+\vspace{0.3cm}
+
+\begin{tabular}{ll}
+(DPair) & $\langle x \circ y \rangle \circ z = \langle x \circ z, y \circ z \rangle$\\
+(Beta) & $App \circ \langle \Lambda(x), y \rangle = x \circ \langle Id, y \rangle$\\
+(D$\Lambda$) & $\Lambda(x) \circ y = \Lambda(x \circ \langle y \circ Fst, Snd\rangle)$\\
+(AI) & $\Lambda(App) = Id$\\
+(FSI) & $\langle Fst, Snd \rangle = Id$
+\end{tabular}
+
+\end{Pm}
+
+\begin{Pm}
+Поясните, что делают операции, определяемые следующим образом:
+\vspace{0.3cm}
+
+\begin{tabular}{l}
+$A ^> := \Lambda(A \circ Snd)$\\
+$A ^< := App \circ \langle A, Id \rangle$\\
+$A \cdot B := (A \circ B^>)^<$\\
+$(A,B) := \langle A^>, B^> \rangle ^<$
+\end{tabular}
+\end{Pm}
+
 \end{document}
